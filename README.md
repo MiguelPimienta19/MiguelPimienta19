@@ -34,12 +34,11 @@ I like playing basketball, surfing, and playing video games, and I’m usually h
 
 - Getting more comfortable with **TypeScript** + React/Next.js patterns  
 - Building more structured **Python backends**  
-- Aiming at **SWE / data** roles after graduation
+- Aiming at becoming cracked for new grad **SWE / Data Science** roles after graduation
 
 ---
 
 ## Find me
 
-- [GitHub](https://github.com/MiguelPimienta19)
 - [LinkedIn](https://www.linkedin.com/in/miguel-pimienta-bernal)
 - 📧 **MiguelPimienta19@gmail.com**
