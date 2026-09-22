@@ -1,44 +1,13 @@
-# Hey, I'm Miguel 👋
+<div align="center">
 
-I'm a first-generation senior at the **University of Oregon** studying **Computer Science** and **Data Science**.  
-I like building full-stack tools that actually get used by students, clubs, and everyday people.
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/typing.svg?v=e7cc9601"><source media="(prefers-color-scheme: light)" srcset="assets/light/typing.svg?v=b27eb271"><img src="assets/dark/typing.svg?v=e7cc9601" alt="new grad swe · cs + data science, university of oregon, 2026 / swe intern at podium · full-time from february 2027" width="860"></picture>
 
----
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/name.svg?v=0a858f6c"><source media="(prefers-color-scheme: light)" srcset="assets/light/name.svg?v=d46c70b3"><img src="assets/dark/name.svg?v=0a858f6c" alt="Miguel Pimienta" width="860"></picture>
 
-## What I work with
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/contrib.svg?v=a17b8dca"><source media="(prefers-color-scheme: light)" srcset="assets/light/contrib.svg?v=fa7a9475"><img src="assets/dark/contrib.svg?v=a17b8dca" alt="a year of contributions, eaten and regrown by a snake" width="860"></picture>
 
-**Languages:** Python, C, C++, TypeScript/JavaScript, SQL, R  
-**Frontend:** React, Next.js, React Native  
-**Backend:** FastAPI, Node.js  
-**Data / ML:** Pandas, NumPy, scikit-learn, R  
-**Storage / Infra:** PostgreSQL, Supabase  
-**Other tools:** Git/GitHub, Unix, Tableau, Power BI
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/journey.svg?v=7e8b94c3"><source media="(prefers-color-scheme: light)" srcset="assets/light/journey.svg?v=1d86e561"><img src="assets/dark/journey.svg?v=7e8b94c3" alt="History" width="860"></picture>
 
----
+<a href="https://personal-website.miguelpimienta19.workers.dev"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/link-site.svg?v=ec3c5b74"><source media="(prefers-color-scheme: light)" srcset="assets/light/link-site.svg?v=e662cd43"><img src="assets/dark/link-site.svg?v=ec3c5b74" alt="site" height="19"></picture></a> &nbsp;&nbsp; <a href="https://linkedin.com/in/miguel-pimienta-bernal"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/link-linkedin.svg?v=be708249"><source media="(prefers-color-scheme: light)" srcset="assets/light/link-linkedin.svg?v=2e2a2359"><img src="assets/dark/link-linkedin.svg?v=be708249" alt="linkedin" height="19"></picture></a> &nbsp;&nbsp; <a href="https://github.com/MiguelPimienta19"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/link-github.svg?v=4707e40f"><source media="(prefers-color-scheme: light)" srcset="assets/light/link-github.svg?v=0698712e"><img src="assets/dark/link-github.svg?v=4707e40f" alt="github" height="19"></picture></a> &nbsp;&nbsp; <a href="mailto:MiguelPimienta19@gmail.com"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/link-email.svg?v=5082b5aa"><source media="(prefers-color-scheme: light)" srcset="assets/light/link-email.svg?v=b81f9919"><img src="assets/dark/link-email.svg?v=5082b5aa" alt="email" height="19"></picture></a>
 
-## Things I've built
-
-- 🧮 Math web app for my old high school (Next.js + custom problem engine + FRED data)  
-- 🗓️ Multicultural Center event hub to replace a paper calendar (full-stack, used by student unions)  
-- 📱 TechPrep, an AI-powered interview prep app (React Native + FastAPI + Supabase + ElevenLabs)
-
----
-
-## A bit about me
-
-I like playing basketball, surfing, and playing video games, and I’m usually hanging out with friends or working on cool projects when I’m not in class.
-
----
-
-## Currently
-
-- Getting more comfortable with **TypeScript** + React/Next.js patterns  
-- Building more structured **Python backends**  
-- Aiming at becoming cracked for new grad **SWE / Data Science** roles after graduation
-
----
-
-## Find me
-
-- [LinkedIn](https://www.linkedin.com/in/miguel-pimienta-bernal)
-- 📧 **MiguelPimienta19@gmail.com**
+</div>

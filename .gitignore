@@ -1,0 +1,6 @@
+# working notes, not for the public profile repo
+HIGGSFIELD.md
+
+__pycache__/
+*.pyc
+.DS_Store
