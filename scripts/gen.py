@@ -270,25 +270,30 @@ def geom(y0, cs=11, gap=3):
 def snake_body(G, T, glow=False):
     """K butted dashes chained behind the head, each narrower and further down the
     head-to-tail ramp than the one ahead of it. Round caps overlap the joins, so the
-    segments read as one tapered body."""
+    segments read as one tapered body.
+
+    The crawl is one shared CSS keyframe, each dash phase-shifted into its slot with a
+    negative delay (the dash pattern repeats every PL, so -(PL-o0) is the same frame as o0).
+    It used to be a SMIL <animate> per dash, which makes Chrome re-resolve that path's
+    presentation attributes every frame, long d included: about 400ms of main thread per
+    second for 42 dashes, against about 85 as CSS. Pixel-identical either way."""
     PL = 1000.0; B = BODY_CELLS*G["pitch"]/G["total"]*PL; cs = G["cs"]
     hr, hg, hb = _rgb(T["head"]); tr, tg, tb = _rgb(T["tail"])
     def seg(j, mul, op, col=None):
         f = (j + 0.5)/K
         c = col or "#%02x%02x%02x" % (round(hr+(tr-hr)*f), round(hg+(tg-hg)*f), round(hb+(tb-hb)*f))
         sw = cs*(1.02 - 0.66*f)*mul; d = B/K; o0 = (j+1)*d
-        return (f'<path class="snk" d="{G["path"]}" pathLength="{PL:.0f}" fill="none" stroke="{c}"'
+        return (f'<path class="snk bd" style="animation-delay:-{LAP*(PL-o0)/PL:.3f}s" d="{G["path"]}" pathLength="{PL:.0f}" fill="none" stroke="{c}"'
                 f' stroke-width="{sw:.2f}" stroke-linecap="round" stroke-linejoin="round"'
                 + (f' opacity="{op}"' if op else "") +
-                f' stroke-dasharray="{d:.3f} {PL-d:.3f}" stroke-dashoffset="{o0:.3f}">'
-                f'<animate attributeName="stroke-dashoffset" from="{o0:.3f}" to="{o0-PL:.3f}"'
-                f' dur="{LAP:.0f}s" repeatCount="indefinite"/></path>')
+                f' stroke-dasharray="{d:.3f} {PL-d:.3f}" stroke-dashoffset="{o0:.3f}"/>')
     b = []
     if glow:   # two fake bloom passes, cheaper and safer than feGaussianBlur over 14 dashes
         for mul, op in ((2.6, "0.08"), (1.7, "0.14")):
             b += [seg(j, mul, op, T["head"]) for j in range(K-1, -1, -1)]
     b += [seg(j, 1.0, None) for j in range(K-1, -1, -1)]
-    return "".join(b)
+    css = f'.bd{{animation:bd {LAP:.0f}s linear infinite}}@keyframes bd{{from{{stroke-dashoffset:0}}to{{stroke-dashoffset:-{PL:.0f}}}}}'
+    return "".join(b), css
 
 def snake_head(G, T):
     """Eyes ride the path with rotate=auto so the head always faces its direction."""
@@ -384,7 +389,7 @@ def contrib(T):
     b.append(f'<rect x="{tx-1}" y="{ty-1}" width="{cs+2}" height="{cs+2}" rx="3.5" fill="none"'
              f' stroke="{GREEN[4]}" stroke-opacity=".5"/>')
     b.append(halo(G))
-    b.append(snake_body(G, P, glow=True))
+    body, bcss = snake_body(G, P, glow=True); b.append(body)
     rings, rcss = bite_rings(G, P, fed)
     b.append(rings); b.append(snake_head(G, P)); b.append('</g>')
     fy = G["y0"] + 7*pitch + 30
@@ -412,7 +417,7 @@ def contrib(T):
            f'78%{{opacity:0}}100%{{opacity:0}}}}.pline{{animation:pline .62s linear both}}'
            f'@keyframes pwash{{0%{{opacity:.28}}45%{{opacity:.14}}100%{{opacity:0}}}}'
            f'.pwash{{animation:pwash .9s ease-out both}}')
-    css = (eat_css(P) + rcss + pwr +
+    css = (eat_css(P) + bcss + rcss + pwr +
            f'.roll{{animation:roll 7s linear infinite}}@keyframes roll{{from{{transform:translateY(-40px)}}to{{transform:translateY({H+10}px)}}}}' +
            RM + "@media (prefers-reduced-motion:reduce){.snk,.fl,.roll,.pline,.pwash{display:none}.pwr{animation:none}}")
     return svg(W, int(H), "".join(b), "a year of contributions, eaten and regrown by a snake",
@@ -441,7 +446,7 @@ def journey(T):
 
 # ---------- 7. links ----------
 LINKS = [("site", "globe", SITE), ("linkedin", "linkedin", "https://linkedin.com/in/miguel-pimienta-bernal"),
-         ("github", "github", "https://github.com/MiguelPimienta19"), ("email", "gmail", "mailto:MiguelPimienta19@gmail.com")]
+         ("email", "gmail", "mailto:MiguelPimienta19@gmail.com")]
 def link(T, text, ic):
     fs = 12; w = int(len(text)*fs*CW + 32); h = 19
     return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img" aria-label="{esc(text)}">'
