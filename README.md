@@ -4,7 +4,7 @@
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/name.svg?v=0a858f6c"><source media="(prefers-color-scheme: light)" srcset="assets/light/name.svg?v=d46c70b3"><img src="assets/dark/name.svg?v=0a858f6c" alt="Miguel Pimienta" width="860"></picture>
 
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/contrib.svg?v=ee002f98"><source media="(prefers-color-scheme: light)" srcset="assets/light/contrib.svg?v=b8d2a9d0"><img src="assets/dark/contrib.svg?v=ee002f98" alt="a year of contributions, eaten and regrown by a snake" width="860"></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/contrib.svg?v=1e580c2a"><source media="(prefers-color-scheme: light)" srcset="assets/light/contrib.svg?v=99b3b5ed"><img src="assets/dark/contrib.svg?v=1e580c2a" alt="a year of contributions, eaten and regrown by a snake" width="860"></picture>
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/journey.svg?v=7e8b94c3"><source media="(prefers-color-scheme: light)" srcset="assets/light/journey.svg?v=1d86e561"><img src="assets/dark/journey.svg?v=7e8b94c3" alt="History" width="860"></picture>
 
